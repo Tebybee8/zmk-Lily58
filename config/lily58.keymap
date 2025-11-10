@@ -60,11 +60,11 @@
 // | CTRL  |     |     |      |      |      |  HOME  |  |  END  |      |       |       |      |       |       |
 //                     |      |      |      |  space |  |  bpsc |      |       |       |
             bindings = <
-&trans        &trans       &trans            &trans            &trans             &trans                             &trans      &trans    &trans    &kp PIPE    &trans    &trans
-&trans        &trans      &mkp MB2          &mmv MOVE_UP      &mkp MB1           &trans                             &trans      &trans    &kp UP    &trans    &trans    &trans
-&kp LSHFT     &trans      &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &trans                             &trans      &kp LEFT  &kp DOWN  &kp RIGHT &trans    &trans
-&kp LCTRL     &trans      &trans            &trans            &trans             &trans   &kp HOME     &kp END      &trans      &trans    &trans    &trans    &trans    &trans
-                                            &trans            &trans             &trans   &kp SPACE    &kp BSPC     &trans      &trans    &trans
+&trans        &trans      &trans            &trans            &trans             &trans                              &trans      &trans    &trans    &kp PIPE    &trans    &trans
+&trans        &trans      &mkp MB2          &mmv MOVE_UP      &mkp MB1           &trans                              &trans      &trans    &kp UP    &trans      &trans    &trans
+&kp LSHFT     &trans      &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &trans                              &trans      &kp LEFT  &kp DOWN  &kp RIGHT   &trans    &trans
+&kp LCTRL     &trans      &trans            &trans            &trans             &trans   &kp HOME     &kp END       &trans      &trans    &trans    &trans      &trans    &trans
+                                            &trans            &trans             &trans   &kp SPACE    &kp BSPC      &trans      &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
