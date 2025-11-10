@@ -36,13 +36,13 @@
         lower_layer {
             display-name = "Lower Layer";
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |   /   |   *   |   -   |       |
+// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |   /   |   *   |   -   |   =   |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |      |   7   |   8   |   9   |   +   |       |
 // | SHIFT |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   4   |   5   |   6   |       |       |
 // | CTRL  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |      |   1   |   2   |   3   |       | enter |
 //                     |      |      |      |  space |  |  bpsc |      |   0   |       |
             bindings = <
-&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &kp FSLH  &kp STAR    &kp MINUS    &trans
+&bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4                     &trans    &trans    &kp FSLH  &kp STAR    &kp MINUS    &kp EQUAL
 &kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                                                                &trans    &kp N7    &kp N8    &kp N9      &kp PLUS     &trans
 &kp LSHFT &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                                                                &trans    &kp N4    &kp N5    &kp N6      &trans       &trans
 &kp LCTRL &kp F8 &kp F9 &kp F10 &kp F11 &kp F12                       &trans      &trans                      &trans    &kp N1    &kp N2    &kp N3      &trans       &kp RET
