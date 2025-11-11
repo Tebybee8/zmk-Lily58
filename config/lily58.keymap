@@ -4,6 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500 // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -39,13 +42,13 @@
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |   /   |   *   |   -   |   =   |
 // |   `   |  1  |  2  |  3   |  4   |  5   |                   |      |   7   |   8   |   9   |   +   |       |
 // | SHIFT |  F2 |  F3 |  F4  |  F5  |  F6  |                   |      |   4   |   5   |   6   |       |       |
-// | CTRL  |  F8 |  F9 |  F7 |  F11 |  F12 |        |  |       |      |   1   |   2   |   3   |       | enter |
+// | CTRL  |  F8 |  F9 |  F7  |  F11 |  F12 |        |  |       |      |   1   |   2   |   3   |       | enter |
 //                     |      |      |      |  space |  |  bpsc |      |   0   |   .   |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &kp FSLH  &kp STAR    &kp MINUS    &kp EQUAL
 &kp GRAVE &kp N1 &kp N2 &kp N3  &kp N4  &kp N5                                                 &trans    &kp N7    &kp N8    &kp N9      &kp PLUS     &trans
 &kp LSHFT &kp F2 &kp F3 &kp F4  &kp F5  &kp F6                                                 &trans    &kp N4    &kp N5    &kp N6      &trans       &trans
-&kp LCTRL &kp F8 &kp F9 &kp F7 &kp F11 &kp F12        &trans      &trans                      &trans    &kp N1    &kp N2    &kp N3      &trans       &kp RET
+&kp LCTRL &kp F8 &kp F9 &kp F7  &kp F11 &kp F12        &trans      &trans                      &trans    &kp N1    &kp N2    &kp N3      &trans       &kp RET
                   &trans     &trans     &trans         &kp SPACE   &kp BSPC                    &trans    &kp N0    &kp DOT
             >;
 
@@ -55,17 +58,17 @@
         raise_layer {
             display-name = "Raise Layer";
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |      |                   |      |       |       | "|"  |       |       |
+// |       |     |     | sc_u |      |      |                   |      |       |       | "|"  |       |       |
 // |       |     | mr_c|  mup | ml_c |      |                   |      |       |   ^   |      |       |       |
-// | SHIFT |     |mleft|mdown |mright|      |                   |      |   <-  |   v   |  ->  |       |       |
-// | CTRL  |     |     |      |      |      |  HOME  |  |  END  |      |       |       |      |       |       |
+// | SHIFT | sc_l|mleft|mdown |mright| sc_r |                   |      |   <-  |   v   |  ->  |       |       |
+// | CTRL  |     |     | sc_d |      |      |  HOME  |  |  END  |      |       |       |      |       |       |
 //                     |      |      |      |  space |  |  bpsc |      |       |       |
             bindings = <
-&trans        &trans      &trans            &trans            &trans             &trans                              &trans      &trans    &trans    &kp PIPE    &trans    &trans
-&trans        &trans      &mkp MB2          &mmv MOVE_UP      &mkp MB1           &trans                              &trans      &trans    &kp UP    &trans      &trans    &trans
-&kp LSHFT     &trans      &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &trans                              &trans      &kp LEFT  &kp DOWN  &kp RIGHT   &trans    &trans
-&kp LCTRL     &trans      &trans            &trans            &trans             &trans   &kp HOME     &kp END       &trans      &trans    &trans    &trans      &trans    &trans
-                                            &trans            &trans             &trans   &kp SPACE    &kp BSPC      &trans      &trans    &trans
+&trans        &trans            &trans            &msc SCRL_UP      &trans             &trans                                 &trans      &trans    &trans    &kp PIPE    &trans    &trans
+&trans        &trans            &mkp MB2          &mmv MOVE_UP      &mkp MB1           &trans                                 &trans      &trans    &kp UP    &trans      &trans    &trans
+&kp LSHFT     &msc SCRL_LEFT    &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &msc SCRL_RIGHT                        &trans      &kp LEFT  &kp DOWN  &kp RIGHT   &trans    &trans
+&kp LCTRL     &trans            &trans            &msc SCRL_DOWN    &trans             &trans      &kp HOME     &kp END       &trans      &trans    &trans    &trans      &trans    &trans
+                                                  &trans            &trans             &trans      &kp SPACE    &kp BSPC      &trans      &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
