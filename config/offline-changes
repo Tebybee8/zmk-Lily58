@@ -71,7 +71,7 @@
 // | CTRL  |  F8 | F2  |  F7  |  F4  |  F3  |  HOME  |  |  END  |      |       |       |      |       |       |
 //                     |      | mm_c |      |  space |  |  bpsc |      |       |       |
             bindings = <
-&trans        &trans            &trans            &trans            &trans             &trans                                 &kp C_VOL_UP    &kp C_VOL_DN    &kp C_PREV     &kp C_PP        &kp C_NEXT     &trans
+&trans        &trans            &trans            &trans            &trans             &trans                                 &trans          &trans          &trans         &trans          &trans         &trans
 &trans        &msc SCRL_UP      &mkp MB2          &mmv MOVE_UP      &mkp MB1           &msc SCRL_DOWN                         &trans          &trans          &kp UP         &trans          &trans         &trans
 &kp LSHFT     &msc SCRL_LEFT    &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_RIGHT    &msc SCRL_RIGHT                        &trans          &kp LEFT        &kp DOWN       &kp RIGHT       &trans         &trans
 &kp LCTRL     &kp F8            &kp F2            &kp F7            &kp F4             &kp F3      &kp HOME     &kp END       &trans          &trans          &trans         &trans          &trans         &trans
@@ -82,3 +82,4 @@
         };
     };
 };
+// &kp C_VOL_UP    &kp C_VOL_DN    &kp C_PREV     &kp C_PP        &kp C_NEXT     &trans
