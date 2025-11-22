@@ -1,7 +1,7 @@
 // Next implementations:
 // Wire in the physical power off switches on both halves
-// Volume slider keys for up and down
-// Play / pause / next song 
+// Volume slider keys for up and down -- DONE
+// Play / pause / next song -- DONE
 // double tap for toggle layer instead of momentary (mainly for one handed OSRS)
 // programming of the OLED screens to house custom designs
 
