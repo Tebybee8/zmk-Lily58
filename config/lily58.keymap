@@ -23,14 +23,14 @@
             taps <=&tog 2>; 
             tapping-terms-ms = <200>;
         };
-        layer1_hold_or_toggle: behavior_hold_tap {    // This second section was added in and needs some review
+        layer2_hold_or_toggle: behavior_hold_tap {    
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_LAYER1";
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            label = "HT_L1";
+            flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
+            tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
 
-            hold-behavior = <&mo 1>;               // hold = momentary layer
-            tap-behavior  = <&layer1_tapdance>;    // tap → tap dance
+            hold-behavior = <&mo 2>;               // hold = momentary layer
+            tap-behavior  = <&layer2_tapdance>;    // tap → tap dance
         };
     };
 };
