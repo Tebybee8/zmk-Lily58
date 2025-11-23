@@ -13,9 +13,10 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
 
-/* 
+ 
 // defining tapdance behaviors for toggle layers
 / { 
+    /*
     behaviors {
         layer2_tapdance: tap_dance_layer2 {
             compatible = "zmk,behavior-tap-dance";
