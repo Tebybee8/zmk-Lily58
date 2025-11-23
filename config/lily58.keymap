@@ -24,7 +24,7 @@
             flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
             tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
             quick-tap-ms = <200>;
-            bindings = <&mo 2>, <&trans>;
+            bindings = <&mo>, <&kp>;
         };
         layer2_tapdance: tap_dance_layer2 {
             compatible = "zmk,behavior-tap-dance";
