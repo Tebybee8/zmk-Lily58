@@ -37,7 +37,6 @@
             // Still trying this code: for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
             // this behavior needs to be called out as follows: "layer2_hold_or_toggle 'holding operation' 0" as it requires 2 entries but doesn't use '0' here.
             // tap and tap and hold are modified directly within the behavior itself.
-        };
     };
 
     keymap {
