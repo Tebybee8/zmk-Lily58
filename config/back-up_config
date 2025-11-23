@@ -13,8 +13,34 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/pointing.h>
 
+ 
+// defining tapdance behaviors for toggle layers
+/ { 
+    /*
+    behaviors {
+        layer2_tapdance: tap_dance_layer2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_L2";
+            //taps = <&tog 2>; 
+            #binding-cells = <0>;
+            taps = <&none> , <&tog 2>; // Single tap = no operation, Double tap = toggle layer 2
+            tapping-term-ms = <200>;
+        };
 
-/ {
+        layer2_hold_or_toggle: behavior_hold_tap {    
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_L2";
+            #binding-cells = <0>;
+            flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
+            tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
+
+            hold-behavior = <&mo 2>;               // hold = momentary layer
+            tap-behavior  = <&layer2_tapdance>;    // tap → tap dance
+            //bindings = <&mo 2 &layer2_tapdance>;
+        };
+    };
+*/
+
     keymap {
         compatible = "zmk,keymap";
 
