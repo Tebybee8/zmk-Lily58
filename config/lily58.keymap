@@ -32,10 +32,10 @@
         mo_tog: behavior_hold_tap {    
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
+            flavor = "hold-preferred";            // This flavor allows for preference given to the momentary layer.
             tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
             quick-tap-ms = <200>;
-            bindings = <&mo>, <&tog>;
+            bindings = <&mo>, <&tog>;             // this will allow single tap to toggle the layer in question with a hold being the traditional momentary layer
         };
 
             // Still trying this code: for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
@@ -62,7 +62,7 @@
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &kp LBKT
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                       &kp H  &kp J      &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp RBKT
-                        &kp LGUI &kp LALT &mo 1  &kp SPACE  &kp BSPC  &mo_tog 2 2  &kp PG_UP &kp PG_DN
+                        &kp LGUI &kp LALT &mo_tog 1 1  &kp SPACE  &kp BSPC  &mo_tog 2 2  &kp PG_UP &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
