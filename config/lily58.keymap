@@ -20,7 +20,7 @@
         layer2_tapdance: tap_dance_layer2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L2
-            taps <=&tog 2>; 
+            taps <&tog 2>; 
             tapping-terms-ms = <200>;
         };
         layer2_hold_or_toggle: behavior_hold_tap {    
