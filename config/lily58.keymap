@@ -31,11 +31,13 @@
             flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
             tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
             quick-tap-ms = <200>;
-            bindings = <&kp LCTRL>, <&layer2_tapdance>;
+            bindings = <&kp>, <&layer2_tapdance>;
 
             //hold-behavior = <&mo 2>;               // hold = momentary layer
             //tap-behavior  = <&layer2_tapdance>;    // tap → tap dance
             //for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
+            // this behavior needs to be called out as follows: "layer2_hold_or_toggle 'holding operation' 0" as it requires 2 entries but doesn't use '0' here.
+            // tap and tap and hold are modified directly within the behavior itself.
         };
     };
 */
@@ -56,7 +58,7 @@
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &kp LBKT
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                       &kp H  &kp J      &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp RBKT
-                        &kp LGUI &kp LALT &mo 1  &kp SPACE  &kp BSPC  &mo 2  &kp PG_UP &kp PG_DN
+                        &kp LGUI &kp LALT &mo 1  &kp SPACE  &kp BSPC  &layer2_hold_or_toggle LCTRL 0   &kp PG_UP &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
