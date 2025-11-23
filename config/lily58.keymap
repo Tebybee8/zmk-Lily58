@@ -16,7 +16,7 @@
  
 // defining tapdance behaviors for toggle layers
 / { 
-    /*
+   
     behaviors {
         layer2_tapdance: tap_dance_layer2 {
             compatible = "zmk,behavior-tap-dance";
@@ -40,7 +40,6 @@
             // tap and tap and hold are modified directly within the behavior itself.
         };
     };
-*/
 
     keymap {
         compatible = "zmk,keymap";
