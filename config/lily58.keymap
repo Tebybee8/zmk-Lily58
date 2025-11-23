@@ -14,7 +14,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
  
-// defining tapdance behaviors for toggle layers
+// defining tapdance behaviors for toggle layers. Goal is: tap = nothing, hold = momentary layer 2, double tap = toggle layer 2.
 / { 
    
     behaviors {
@@ -23,7 +23,7 @@
             #binding-cells = <0>;
             //taps = <&none> , <&tog 2>; // Single tap = no operation, Double tap = toggle layer 2
             tapping-term-ms = <200>;
-            bindings = <&kp 6>, <&kp LSHIFT>;
+            bindings = <&kp T>, <&kp LSHIFT>;     // should line up for tap = T, Hold = LCTRL, & Tap + hold for LSHIFT
         };
         layer2_hold_or_toggle: behavior_hold_tap {    
             compatible = "zmk,behavior-hold-tap";
@@ -31,11 +31,9 @@
             flavor = "hold-preferred";            // not sure if this flavor is what I want, but it's where i'll start
             tapping-term-ms = <200>;              // 200 ms time window to register as a 'double tap'
             quick-tap-ms = <200>;
-            bindings = <&kp 7>, <&layer2_tapdance>;
+            bindings = <&kp>, <&layer2_tapdance>;
 
-            //hold-behavior = <&mo 2>;               // hold = momentary layer
-            //tap-behavior  = <&layer2_tapdance>;    // tap → tap dance
-            //for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
+            // Still trying this code: for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
             // this behavior needs to be called out as follows: "layer2_hold_or_toggle 'holding operation' 0" as it requires 2 entries but doesn't use '0' here.
             // tap and tap and hold are modified directly within the behavior itself.
         };
