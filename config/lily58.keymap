@@ -1,3 +1,10 @@
+// Next implementations:
+// Wire in the physical power off switches on both halves
+// programming of the OLED screens to house custom designs
+// Hold tap implementation for shift and capslock
+// place comma on numpad layer (maybe enter and delete on this layer too?)
+
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
