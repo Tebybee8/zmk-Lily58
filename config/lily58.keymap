@@ -3,6 +3,7 @@
 // programming of the OLED screens to house custom designs
 // Hold tap implementation for shift and capslock
 // place comma on numpad layer (maybe enter and delete on this layer too?)
+   // add the same function keys across both nav and fn layer for consistency - don't use the others nearly as much, but should have them
 // shift acceleration for mouse navigation?
 
 
