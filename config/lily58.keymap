@@ -4,7 +4,7 @@
 // Hold tap implementation for shift and capslock
 // custom hold tap for left click on nav for drag functionality. 
 // shift acceleration for mouse navigation?
-// need to change the num pad , & / designations as I need to use both with the numpad (dates & lists of parts)
+// need to change the num pad , & / designations as I need to use both with the numpad (dates & lists of parts) - 12/17/25
 // need to change the toggle layer setup - i'm consistently toggling when I don't want to
 
 
@@ -71,13 +71,13 @@
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
 // | SHIFT |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | CTRL  |  Z  |  X  |  C   |  V   |  B   |   DEL  |  | ENTER |  N   |  M    |  ,    |  .   |   /   |   ]   |
+// | CTRL  |  Z  |  X  |  C   |  V   |  B   |   DEL  |  | ENTER |  N   |  M    |  ,    |  .   |   /   |   \   |
 //                     | GUI  | ALT  | LOWER|  SPACE |  | BSPC  | RAISE| pgup  | pgdwn |
             bindings = <
 &kp ESC   &kp N1 &kp N2 &kp N3   &kp N4   &kp N5                      &kp N6 &kp N7     &kp N8    &kp N9  &kp N0   &kp GRAVE
-&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &kp LBKT
+&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &trans
 &kp LSHFT &kp A  &kp S  &kp D    &kp F    &kp G                       &kp H  &kp J      &kp K     &kp L   &kp SEMI &kp SQT
-&kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp RBKT
+&kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp BSLH
                         &kp LGUI &kp LALT MO_TOG(1)  &kp SPACE  &kp BSPC  MO_TOG(2)  &kp PG_UP &kp PG_DN
             >;
 
@@ -88,15 +88,15 @@
             display-name = "Lower Layer";
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |  "|"  |   /   |   *   |   -   |   =   |
-// |   `   |  1  |  2  |  3   |  4   |  5   |                   |      |   7   |   8   |   9   |   +   |       |
-// | SHIFT |  F9 | F12 | F11  |  F5  |  F6  |                   |      |   4   |   5   |   6   |       |       |
-// | CTRL  |  F8 |  F2 |  F7  |  F4  |  F3  |  DEL   |  | ENTER |      |   1   |   2   |   3   |   ,   | enter |
+// |   `   |  1  |  2  |  3   |  4   |  5   |                   |      |   7   |   8   |   9   |   +   |   [   |
+// | SHIFT |  F9 | F12 | F11  |  F5  |  F6  |                   |      |   4   |   5   |   6   |   ,   |   ]   |
+// | CTRL  |  F8 |  F2 |  F7  |  F4  |  F3  |  DEL   |  | ENTER |      |   1   |   2   |   3   |   /   | enter |
 //                     |      |      |      |  space |  |  bpsc |      |   0   |   .   |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_SEL 4             &trans    &kp PIPE  &kp FSLH  &kp STAR    &kp MINUS    &kp EQUAL
-&kp GRAVE &kp N1 &kp N2  &kp N3   &kp N4  &kp N5                                               &trans    &kp N7    &kp N8    &kp N9      &kp PLUS     &trans
-&kp LSHFT &kp F9 &kp F12 &kp F11  &kp F5  &kp F6                                               &trans    &kp N4    &kp N5    &kp N6      &trans       &trans
-&kp LCTRL &kp F8 &kp F2  &kp F7   &kp F4  &kp F3        &kp DEL    &kp RET                     &trans    &kp N1    &kp N2    &kp N3      &kp COMMA      &kp RET
+&kp GRAVE &kp N1 &kp N2  &kp N3   &kp N4  &kp N5                                               &trans    &kp N7    &kp N8    &kp N9      &kp PLUS     &kp LBKT
+&kp LSHFT &kp F9 &kp F12 &kp F11  &kp F5  &kp F6                                               &trans    &kp N4    &kp N5    &kp N6      &kp COMMA    &kp RBKT
+&kp LCTRL &kp F8 &kp F2  &kp F7   &kp F4  &kp F3        &kp DEL    &kp RET                     &trans    &kp N1    &kp N2    &kp N3      &kp FSLH     &kp RET
                   &trans     &trans     &trans         &kp SPACE   &kp BSPC                    &trans    &kp N0    &kp DOT
             >;
 
