@@ -59,8 +59,8 @@
 
         ctrl_tog: control_toggle_layer {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&tog>; // Default: momentary; +Ctrl: toggle
+            #binding-cells = <0>;
+            bindings = <&mo(1)>, <&tog(1)>; // Default: momentary; +Ctrl: toggle
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
