@@ -57,10 +57,10 @@
             // this behavior needs to be called out as follows: "layer2_hold_or_toggle 'holding operation' 0" as it requires 2 entries but doesn't use '0' here.
             // tap and tap and hold are modified directly within the behavior itself.
 
-        ctrl_tog: control_toggle_layer {
+        ctrl_tog1: control_toggle_layer {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&mo(1)>, <&tog(1)>; // Default: momentary; +Ctrl: toggle
+		bindings = <&mo(1)>, <&tog(1)>; // Default: momentary; +Ctrl: toggle
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
