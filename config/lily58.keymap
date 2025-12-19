@@ -28,6 +28,8 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #define MO_TOG(layer) &mo_tog layer layer
+#define CTRL_TOG(layer) &ctrl_tog layer layer
+
 
 
 // defining tapdance behaviors for toggle layers. Goal is: tap = nothing, hold = momentary layer 2, double tap = toggle layer 2.
@@ -59,7 +61,7 @@
 
         ctrl_tog: control_toggle_layer {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
 		bindings = <&mo>, <&tog>; // Default: momentary; +Ctrl: toggle
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
