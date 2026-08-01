@@ -44,7 +44,7 @@
         lay1_td: lay1_td {							// layer 1 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
-			flavor = "hold-preferred";
+			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&none>, <&tog 1>;  		   	// Single tap = no operation, Double tap = toggle layer 1
         };
@@ -52,7 +52,7 @@
 		lay1_ht: lay1_ht {							//layer 1 Hold tap behavior
 	        compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-			flavor = "hold-preferred";
+			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&mo 1>, <&lay1_td>;     		// Single tap = nothing,, Hold = momentary layer 1 swap, & double tap for toggle layer 1		
 		};
@@ -60,7 +60,7 @@
         lay2_td: lay2_td {						// layer 2 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
-			flavor = "hold-preferred";
+			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&none>, <&tog 2>;  		   	// Single tap = no operation, Double tap = toggle layer 2
         };
@@ -68,7 +68,7 @@
 		lay2_ht: lay2_ht {							//layer 2 Hold tap behavior
 	        compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-			flavor = "hold-preferred";
+			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&mo 2>, <&lay2_td>;     		// Single tap = nothing,, Hold = momentary layer 2 swap, & double tap for toggle layer 2		
 		};
@@ -76,7 +76,7 @@
         shft_cps: shft_cps {				
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-			flavor = "hold-preferred";
+			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&kp LSHIFT>, <&kp CAPS>;     // Single tap/hold is Lshift, & Double tap is Caps lock
         };
@@ -92,7 +92,7 @@
             // Still trying this code: for this test: single tap should be the number 6, hold for LCTRL, and Tap + CTRL for LSHIFT
             // this behavior needs to be called out as follows: "layer2_hold_or_toggle 'holding operation' 0" as it requires 2 entries but doesn't use '0' here.
             // tap and tap and hold are modified directly within the behavior itself.
-			//7.31.26: I don't think this will work with layer swaps, only individual key strokes.
+			//7.31.26: this is what I was using before.
 /*
         ctrl_tog: control_toggle_layer {
             compatible = "zmk,behavior-mod-morph";
