@@ -41,27 +41,44 @@
    
     behaviors {
 
-        lay_td: tap_dance_layer {
+        lay1_td: lay1_td:							// layer 1 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
 			flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&none>, <&tog>;     // Single tap = no operation, Double tap = toggle layer
+            bindings = <&none>, <&tog 1>;  		   	// Single tap = no operation, Double tap = toggle layer 1
         };
 
-		lay_ht: hold_tap_layer {
+		lay1_ht: lay1_ht {							//layer 1 Hold tap behavior
 	        compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 			flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&mo>, <&lay_td>;     // should line up for tap = nothing,, Hold = momentary layer swap, & double tap for toggle		
+            bindings = <&mo 1>, <&lay1_td>;     		// Single tap = nothing,, Hold = momentary layer 1 swap, & double tap for toggle layer 1		
 		};
-        shft_cps: shift_caps_dance {
+
+        lay2_td: lay2_td:							// layer 2 Tap Dance behavior
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>; 
+			flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&none>, <&tog 2>;  		   	// Single tap = no operation, Double tap = toggle layer 2
+        };
+
+		lay2_ht: lay2_ht {							//layer 2 Hold tap behavior
+	        compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+			flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&mo 2>, <&lay2_td>;     		// Single tap = nothing,, Hold = momentary layer 2 swap, & double tap for toggle layer 2		
+		};
+
+        shft_cps: shift_caps_dance {				
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 			flavor = "hold-preferred";
             tapping-term-ms = <150>;
-            bindings = <&kp LSHIFT>, <&kp CAPS>;     // should line up for tap/hold is Lshift, & Double tap is Caps lock
+            bindings = <&kp LSHIFT>, <&kp CAPS>;     // Single tap/hold is Lshift, & Double tap is Caps lock
         };
 
         mo_tog: behavior_hold_tap {    
@@ -109,13 +126,13 @@
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &trans
 &shft_cps &kp A  &kp S  &kp D    &kp F    &kp G                       &kp H  &kp J      &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                  &kp LGUI &kp LALT &lay_ht (1)  &kp SPACE  &kp BSPC  &lay_ht (2)  &kp PG_UP &kp PG_DN
+                     &kp LGUI &kp LALT &lay1_ht  &kp SPACE  &kp BSPC  &lay2_ht  &kp PG_UP &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer { 		// Numpad, music, & BT layer.
+        lower_layer { 		// Layer  1: Numpad, music, & BT layer. 
             display-name = "Lower Layer";
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |  "|"  |   /   |   *   |   -   |   =   |
@@ -134,7 +151,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        raise_layer { 		//navigation layer
+        raise_layer { 		//Layer 2: navigation layer
             display-name = "Raise Layer";
 // ------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |      |                   | v_dwn| v_up  |  prev | play | next  | S_off |
