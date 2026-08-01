@@ -40,7 +40,7 @@
 / { 
    
     behaviors {
-
+/* 	//need to spend more time with this one - currently only works with the momentary layer swap & doesn't toggle - bricks both boards until reset. switching back to &mo for now
         lay1_td: lay1_td {							// layer 1 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
@@ -72,13 +72,14 @@
             tapping-term-ms = <150>;
             bindings = <&mo 2>, <&lay2_td>;     		// Single tap = nothing,, Hold = momentary layer 2 swap, & double tap for toggle layer 2		
 		};
-
+*/
         shft_cps: shft_cps {				
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 			//flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&kp LSHIFT>, <&kp CAPS>;     // Single tap/hold is Lshift, & Double tap is Caps lock
+
         };
 
         mo_tog: behavior_hold_tap {    
@@ -126,7 +127,7 @@
 &kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                       &kp Y  &kp U      &kp I     &kp O   &kp P    &trans
 &shft_cps &kp A  &kp S  &kp D    &kp F    &kp G                       &kp H  &kp J      &kp K     &kp L   &kp SEMI &kp SQT
 &kp LCTRL &kp Z  &kp X  &kp C    &kp V    &kp B  &kp DEL    &kp RET   &kp N  &kp M      &kp COMMA &kp DOT &kp FSLH &kp BSLH
-                     &kp LGUI &kp LALT &lay1_ht  &kp SPACE  &kp BSPC  &lay2_ht  &kp PG_UP &kp PG_DN
+                        &kp LGUI &kp LALT &mo 1  &kp SPACE  &kp BSPC  &mo 2  &kp PG_UP &kp PG_DN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
