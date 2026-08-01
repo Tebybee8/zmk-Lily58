@@ -73,7 +73,7 @@
             bindings = <&mo 2>, <&lay2_td>;     		// Single tap = nothing,, Hold = momentary layer 2 swap, & double tap for toggle layer 2		
 		};
 
-        shft_cps: shift_caps_dance: {				
+        shft_cps: shft_cps {				
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 			flavor = "hold-preferred";
