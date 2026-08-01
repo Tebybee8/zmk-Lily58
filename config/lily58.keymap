@@ -41,7 +41,7 @@
    
     behaviors {
 
-        lay1_td: lay1_td:							// layer 1 Tap Dance behavior
+        lay1_td: lay1_td {							// layer 1 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
 			flavor = "hold-preferred";
@@ -57,7 +57,7 @@
             bindings = <&mo 1>, <&lay1_td>;     		// Single tap = nothing,, Hold = momentary layer 1 swap, & double tap for toggle layer 1		
 		};
 
-        lay2_td: lay2_td:							// layer 2 Tap Dance behavior
+        lay2_td: lay2_td {						// layer 2 Tap Dance behavior
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>; 
 			flavor = "hold-preferred";
@@ -73,7 +73,7 @@
             bindings = <&mo 2>, <&lay2_td>;     		// Single tap = nothing,, Hold = momentary layer 2 swap, & double tap for toggle layer 2		
 		};
 
-        shft_cps: shift_caps_dance {				
+        shft_cps: shift_caps_dance: {				
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
 			flavor = "hold-preferred";
